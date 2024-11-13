@@ -1,0 +1,445 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* TOOLS */
+    .modal { 
+        @apply fixed top-0 left-0 w-screen h-screen overflow-auto z-10 flex bg-black/40 justify-center items-center font-Poppins
+    }
+
+    /* Navigation */
+    .activeNav {
+        @apply  bg-NuButton rounded-lg text-gray-50
+    }
+
+    /* AUTHENTICATION FORMS*/
+    .form {
+       @apply grid place-items-center min-h-screen
+       
+    }
+
+    .headerNavActive {
+        @apply bg-NuButton text-white rounded-3xl
+    }
+
+    .formContainer {
+        @apply bg-white px-8 py-9 shadow-lg rounded-xl
+        max-[396px]:p-5 
+        max-sm:p-6
+    }
+
+    .form-title {
+        @apply font-Poppins text-center text-[2.3rem] font-semibold mb-[4px]
+        max-[396px]:text-[2rem]
+        max-sm:text-[2.2rem]
+    }
+
+    .formBtn {
+        @apply bg-NuButton duration-200 hover:bg-NuButtonHover text-white h-11 rounded-md cursor-pointer font-medium text-sm flex justify-center relative
+        max-[396px]:py-2.5 
+    }
+
+    /* AUTHENTICATION COMPONENTS */
+    .auth-container {
+        @apply w-[360px] duration-200
+        max-[396px]:w-[300px]
+        max-sm:w-[325px]
+    }
+
+    .auth-input-container {
+        @apply flex border-2 rounded-lg px-3 duration-200 mt-[1.2rem] bg-[#fbfcfe]
+    }
+
+    .auth-input-field {
+        @apply outline-none text-[0.8rem] ml-2 py-4  bg-transparent w-full h-full font-medium font-Poppins
+        max-[396px]:py-3.5 max-[396px]:text-[0.7rem]
+    }
+
+    .profile-registration-container {
+        @apply flex flex-col items-center space-y-4
+        max-sm:flex-col max-sm:w-full max-sm:gap-0 
+        max-md:gap-0 
+        max-lg:gap-0
+    }
+
+    /* PROFILE */
+    .profileFields {
+        @apply rounded-lg mb-3 py-3 px-4 border-2 outline-none focus:border-[#c1c6f2] focus:bg-[#f3f4fd] w-full
+    }
+
+    .inputSelect {
+        @apply absolute bg-white shadow-md w-full flex flex-col border-2 border-[#c1c6f2] rounded-xl overflow-hidden z-10 top-14
+    }
+
+    .inputOptions {
+        @apply py-2 text-left px-3 hover:bg-NuButtonHover hover:text-white  duration-200
+    }
+
+    .inputSubmit {
+        @apply py-3 px-10 text-sm bg-NuButton text-white hover:bg-NuButtonHover duration-300 rounded-lg cursor-pointer shadow-md w-full
+    }
+
+    /*APPLICATION FORMS*/
+    .formTitle {
+        @apply text-[1.2rem] font-medium tracking-tight font-Poppins mb-1
+    }
+
+    .inputContainer {
+        @apply flex justify-between 
+        max-md:justify-normal
+    }
+    .inputLabel {
+        @apply text-base font-normal 
+        max-sm:w-36 max-sm:my-auto max-sm:text-sm
+        max-md:w-36
+    }
+
+    .inputFields {
+        @apply py-2 px-3.5 ml-3 w-[25vw] border-2 text-sm relative top-[-9px] rounded-md 
+        max-sm:top-0 max-sm:w-72
+        max-md:w-96
+    }
+
+    /* SETTINGS */
+    .setting-input-container {
+        @apply relative rounded-lg w-full my-auto
+    }
+
+    .setting-input-label {
+        @apply absolute left-3.5 top-4 pointer-events-none duration-200 text-sm
+        peer-focus:text-[0.7rem] peer-focus:top-1.5 peer-focus:text-[#9ca0a4]
+        peer-valid:top-1.5 peer-valid:text-[0.7rem] peer-valid:text-[#9ca0a4]
+    }
+
+    /* ADMIN VIEW APPLICATION FORM */
+    .imageButton {
+        @apply border-2 flex rounded-lg px-2 py-3 space-x-2 hover:bg-NuButtonHover hover:text-white duration-200 hover:border-NuButtonHover
+    }
+
+    .imageNameContainer {
+        @apply flex flex-col text-left
+    }
+
+    .uploadName {
+        @apply text-xs font-medium
+    }
+
+    .imagePathName {
+        @apply text-[0.7rem] translate-y-1 w-48 text-ellipsis overflow-hidden whitespace-nowrap 
+    }
+}
+
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+.checkbox {
+    appearance: none;
+    width: 22px;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    border: 2px solid #888;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+  
+.checkbox::before {
+    font-family: "Quicksand", sans-serif;
+    position: absolute;
+    bottom: -10px;
+    left: -1px;
+    content: "✔";
+    font-size: 25px;
+    color: #05c46b;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+  
+.checkbox:checked::before {
+    animation: zoom 0.5s ease-in-out;
+    transform: scale(1);
+}
+
+.wrongBox {
+    appearance: none;
+    width: 22px;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    border: 2px solid #888;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+  
+.wrongBox::before {
+    font-family: "Quicksand", sans-serif;
+    position: absolute;
+    bottom: -13px;
+    left: -3px;
+    content: "✘";
+    font-size: 25px;
+    color: #ef4444;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+  
+.wrongBox:checked::before {
+    animation: zoom 0.5s ease-in-out;
+    transform: scale(1);
+}
+  
+  @keyframes zoom {
+    0% {
+      transform: scale(0);
+    }
+  
+    20% {
+      transform: scale(1.5);
+    }
+  
+    40% {
+      transform: scale(0.5);
+    }
+  
+    50% {
+      transform: scale(1);
+    }
+  
+    70% {
+      transform: scale(1.2);
+    }
+  
+    90% {
+      transform: scale(0.8);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+
+/* Scroll Design */
+::-webkit-scrollbar {
+    padding: 10px 5px;
+    width: 4px;
+    background-color: #f87171;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.colored-toast .swal2-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+.background-gradient {
+    background: linear-gradient(to bottom, #fbfbfd, #f8f8fd);
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.fade-in {
+    animation: fadeIn 0.2s ease forwards;
+}
+
+.fade-left {
+    animation: fadeLeft 0.2s ease forwards;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+  
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+}
+  
+.arrow {
+    position: absolute;
+    top: 100%; /* Position above the popover */
+    left: 50%; /* Center the arrow horizontally */
+    transform: translateX(-50%); /* Adjust centering */
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent; /* Adjust for the arrow size */
+    border-right: 8px solid transparent; /* Adjust for the arrow size */
+    border-bottom: 15px solid #f87171; /* Color matches popover */
+}
+
+.triangle1 {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 50px 0 0;
+    border-color: #8086e0 transparent transparent transparent;
+    margin: 0 auto;
+    animation: shk1 1s ease-in-out infinite normal;
+}
+  
+.triangle2 {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 50px 50px;
+    border-color: transparent transparent #6554b388 transparent;
+    margin: -50px auto 0;
+    animation: shk2 1s ease-in-out infinite alternate;
+}
+
+@keyframes shk1 {
+    0% {
+        transform: rotate(-360deg);
+    }
+  
+    100% {
+    }
+}
+  
+@keyframes shk2 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+    }
+}
+  
+.text {
+    color: #949494;
+    margin: 25px auto;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+    cursor: pointer;
+}
+  
+.toggle-switch input[type="checkbox"] {
+    display: none;
+}
+  
+.toggle-switch-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 2px #ccc;
+    transition: background-color 0.3s ease-in-out;
+}
+  
+.toggle-switch-handle {
+    position: absolute;
+    top: 2.5px;
+    left: 3.5px;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+  
+.toggle-switch::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    right: -5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #aaa;
+    text-shadow: 1px 1px #fff;
+    transition: color 0.3s ease-in-out;
+}
+  
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-handle {
+    transform: translateX(45px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 3px #05c46b;
+}
+  
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-background {
+    background-color: #05c46b;
+    box-shadow: inset 0 0 0 2px #04b360;
+}
+  
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch:before {
+    content: "On";
+    color: #05c46b;
+    right: -15px;
+}
+  
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-background .toggle-switch-handle {
+    transform: translateX(28px);
+}
+
+/* From Uiverse.io by Fernando-sv */ 
+.loader {
+  border: 3px solid white;
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+
+.loader {
+  border: 3px solid white;
+  border-left-color: transparent;
+  width: 25px;
+  height: 25px;
+}
+
+.loader {
+  border: 3px solid white;
+  border-left-color: transparent;
+  width: 25px;
+  height: 25px;
+  animation: spin89345 1s linear infinite;
+}
+
+@keyframes spin89345 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
