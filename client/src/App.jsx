@@ -44,8 +44,8 @@ import useInactivityLogout from "./hooks/Helpers/useInactivityLogout.jsx";
 import useLogout from "./hooks/AuthHooks/useLogout.jsx";
 
 
-axios.defaults.baseURL = 'http://localhost:3001'; 
-/* axios.defaults.baseURL = 'https://nufso.onrender.com'; */
+/* axios.defaults.baseURL = 'http://localhost:3001';  */
+axios.defaults.baseURL = 'https://nufso.onrender.com';
 axios.defaults.withCredentials = true;
 
 function App() {
